@@ -13,6 +13,11 @@ import javafx.scene.layout.Region;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Reynaldo Martinez
+ */
+
 public class TableViewUtils {
 
     //create a final TableView variable
