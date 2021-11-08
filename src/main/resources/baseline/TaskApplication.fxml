@@ -55,7 +55,7 @@
       <columns>
          <TableColumn fx:id="completedColumn" prefWidth="125.0" resizable="false" text="Completed" />
          <TableColumn fx:id="dueDateColumn" prefWidth="125.0" resizable="false" text="Due Date" />
-         <TableColumn fx:id="descriptionColumn" prefWidth="629.0" resizable="false" text="Description" />
+         <TableColumn fx:id="descriptionColumn" prefWidth="615.0" resizable="false" text="Description" />
       </columns>
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

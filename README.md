@@ -35,6 +35,10 @@ The most important aspect of the application is the mini plus bar on the side of
 There you will be able to select and display certain columns as well as displaying items which have been completed or yet to be completed
 The last menu item on the table is an option to clear the table entirely. A confirmation pop up will display to make sure the user wants to proceed upon clearing the table
 
+To delete columns from the table all you have to do is right click the row you wish to delete and click the remove option
+
+The users are also allowed to edit certain cells. All the user has to do is to double mouse click the cell they wish to edit
+
 
 ## Authors
 
