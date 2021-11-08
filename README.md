@@ -35,3 +35,8 @@ The most important aspect of the application is the mini plus bar on the side of
 There you will be able to select and display certain columns as well as displaying items which have been completed or yet to be completed
 The last menu item on the table is an option to clear the table entirely. A confirmation pop up will display to make sure the user wants to proceed upon clearing the table
 
+
+## Authors
+
+- [@ReynaldoMartinez](https://github.com/Reynaldo-Martinez2021)
+
