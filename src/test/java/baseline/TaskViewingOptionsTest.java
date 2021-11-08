@@ -6,6 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/*
+ *  UCF COP3330 Summer 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Reynaldo Martinez
+ */
+
+
 class TaskViewingOptionsTest {
 
     @Test
