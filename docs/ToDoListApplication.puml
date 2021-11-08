@@ -1,0 +1,105 @@
+@startuml
+
+Class ItemListOperations{
++addToList(ObservableList<Item> controllerList, Item newItem): boolean
++deleteFromList(ObservableList<Item> controllerList, Item newItem)
+}
+
+Class TaskViewOptions{
++displayIncomplete(TableView<Item> tableView, ObservableList<Item> itemObservableList)
++displayComplete(TableView<Item> tableView, ObservableList<Item> itemObservableList)
+}
+
+Class Item{
+-SimpleStringProperty: description
+-SimpleStringProperty: dueDate
+-SimpleBooleanProperty: isCompleted
++isCompletedProperty(): SimpleBooleanProperty
++descriptionProperty(): SimpleStringProperty
++dueDateProperty(): SimpleStringProperty
++getDescription(): String
++setDescription(String)
++getDueDate(): String
++setDueDate(String)
++getIsCompleted(): boolean
++setIsCompleted(boolean)
+}
+
+Class CreateItem{
++startProcess(String, LocalDate): Item
+-validateDescription(String): String
+-validateDate(LocalDate): String
+}
+
+Class MenuOptions{
++openList(TableView<Item> tableView, ObservableList<Item> itemObservableList, File file)
++public void saveList(ObservableList<Item> itemList, File file)
+}
+
+Class PopUp{
++createPopup()
++nonUniqueDate()
++confirmClearList()
++confirmCloseList()
+}
+
+Class TableViewUtils{
+-TableView<Item>: tableView
+-ObservableList<Item>: itemObservableList
+-ContextMenu: contextMenu
+-List<MenuItem>:additionalMenuItems
++TableViewUtils(TableView, ObservableList<Item>)
+-registerListeners()
+#showContextMenu()
+-setFixedHeader()
+-findButtonNode()
+-getTableHeaderRow()
+-ContextMenu()
+#doSelectAll(Event e)
+#doDeselectAll(Event e)
++isShowAllColumnsOperators(): boolean
+}
+
+Class TaskApplicationController{
+-ObservableList<Item>: itemObservableList
+-FileChooser fileChooser
+-Stage: stage
+-VBox: vBox
+-TextField: taskTitle
+-TableView<Item>: tableView
+-TableColumn<Item, Boolean>: completedColumn
+-TableColumn<Item, String>: dueDateColumn
+-TableColumn<Item, String>: descriptionColumn
+-TextField: newItemDescription
+-DatePicker: newItemDueDate
++initialize(URL, ResourceBundle)
+-tableViewLoad()
++addNewItem()
+-createItem(TextField, DatePicker)
+-addToTableView(Item)
++openFiles()
++saveFiles()
+-setUpFileChooserSave()
+-setUpFileChooserOpen()
+}
+
+Class TodoListApplication{
++start(Stage)
++main(String[])
+}
+TodoListApplication ..> TaskApplicationController
+TaskApplicationController ..>"*"Item
+TaskApplicationController ..>CreateItem
+TaskApplicationController ..> MenuOptions
+TaskApplicationController ..> TableViewUtils
+
+CreateItem ..> "*"Item
+CreateItem ..> PopUp
+
+TableViewUtils ..> TaskViewOptions
+TableViewUtils ..> PopUp
+
+MenuOptions ..> Item
+
+ItemListOperations ..> PopUp
+@enduml

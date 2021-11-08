@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baseline.TaskApplicationController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <GridPane>
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="720.0" minWidth="10.0" prefWidth="440.0" />
+         <ColumnConstraints fillWidth="false" maxWidth="491.0" minWidth="10.0" prefWidth="440.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+      <TextField fx:id="taskTitle" text="To Do List Title">
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin>
+      </TextField>
+      <MenuBar GridPane.columnIndex="1">
+         <Menu fx:id="menuOpen" mnemonicParsing="false" text="Open">
+            <items>
+               <MenuItem fx:id="openList" mnemonicParsing="false" onAction="#openFiles" text="Open List" />
+            </items></Menu>
+         <Menu fx:id="menuSave" mnemonicParsing="false" text="Save">
+            <items>
+               <MenuItem fx:id="saveList" mnemonicParsing="false" onAction="#saveFiles" text="Save List" />
+            </items></Menu>
+      </MenuBar>
+   </GridPane>
+   <Separator prefWidth="200.0">
+      <VBox.margin>
+         <Insets bottom="7.0" />
+      </VBox.margin>
+   </Separator>
+   <TableView fx:id="tableView" editable="true" focusTraversable="false" tableMenuButtonVisible="true" VBox.vgrow="SOMETIMES">
+      <columns>
+         <TableColumn fx:id="completedColumn" prefWidth="125.0" resizable="false" text="Completed" />
+         <TableColumn fx:id="dueDateColumn" prefWidth="125.0" resizable="false" text="Due Date" />
+         <TableColumn fx:id="descriptionColumn" prefWidth="629.0" resizable="false" text="Description" />
+      </columns>
+      <columnResizePolicy>
+         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+      </columnResizePolicy>
+   </TableView>
+   <Separator prefWidth="200.0">
+      <VBox.margin>
+         <Insets bottom="5.0" top="10.0" />
+      </VBox.margin>
+   </Separator>
+   <GridPane>
+      <columnConstraints>
+         <ColumnConstraints hgrow="ALWAYS" maxWidth="675.0" minWidth="10.0" prefWidth="638.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="182.0" />
+         <ColumnConstraints hgrow="NEVER" maxWidth="95.0" minWidth="10.0" prefWidth="60.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <TextField fx:id="newItemDescription" promptText="Enter a description" />
+      <DatePicker fx:id="newItemDueDate" promptText="Enter a Due Date" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Button fx:id="addButton" focusTraversable="false" mnemonicParsing="false" onAction="#addNewItem" text="Add" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+   </GridPane>
+</VBox>
